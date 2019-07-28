@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'register.dart';
 
 class EnterPhone extends StatefulWidget{
   @override
@@ -30,7 +31,7 @@ class _EnterPhone extends State<EnterPhone>{
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
                   Padding(padding: const EdgeInsets.only(top: 70.0, left: 20.0, right: 20.0),
-                  child: Text("Provide your Phone number", style: TextStyle(fontSize: 25.0, color: Colors.white, fontWeight: FontWeight.bold)),
+                  child: Text("Enter your phone number", style: TextStyle(fontSize: 25.0, color: Colors.white, fontWeight: FontWeight.bold)),
                   ),
                   Padding(padding: const EdgeInsets.only(top:10.0, left: 20.0, right: 20.0),
                   child: Text("You will be sent a one-time passcode to contine authorization", style: TextStyle(fontSize: 15.0, color: Colors.white, fontWeight: FontWeight.bold)),
@@ -43,28 +44,55 @@ class _EnterPhone extends State<EnterPhone>{
                 children: <Widget>[
                   Padding(
                     padding: EdgeInsets.only(left: 20.0, right: 20.0),
-                    child:  TextField(
-                      style: TextStyle(color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.bold),
-                    decoration: InputDecoration(
-                      hasFloatingPlaceholder: true,
-                      helperText: "Enter Phone Number", helperStyle: TextStyle(color:Colors.white),
-                    prefixStyle: TextStyle(color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.bold), prefixText: "+234",),
-                  ),)
+                    child: TextFormField(
+                      cursorColor: Colors.white,
+                      decoration: InputDecoration(
+                        labelText: "Enter Phone Number",
+                        labelStyle: TextStyle(color: Colors.white,fontSize: 15.0),
+                        fillColor: Colors.white,
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(25.0),
+                          borderSide: BorderSide(
+                            color: Colors.white,
+                            style: BorderStyle.solid
+                          ),
+                        ),
+                      ),
+                      validator: (val) {
+                        if(val.length==0) {
+                          return "Phone Number cannot be empty";
+                        }else{
+                          return null;
+                        }
+                      },
+                      keyboardType: TextInputType.phone,
+                      style: new TextStyle(
+                        fontFamily: "Poppins", color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.bold
+                      ),
+                    )
+                  )
                 ],
               ),
               Row(children: <Widget>[
                 Expanded(
                   child: Padding(
                     padding: EdgeInsets.only(top: 500.0, left: 20.0, right: 20.0),
-                  child: Container(
+                  child: GestureDetector(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context)=> Register() ));
+                    },
+
+                    child:  Container(
                     alignment: Alignment.center,
                     height: 50,
                     decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.circular(10.0)
+                      borderRadius: BorderRadius.circular(25.0)
                     ),
                     child: Text("Continue", style: TextStyle(color: Colors.green[600], fontSize: 15.0, fontWeight: FontWeight.bold )),
                   ),
+                  ) ,
                   )
                 )
               ],)

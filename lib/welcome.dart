@@ -67,7 +67,7 @@ class _Welcome extends State<Welcome>{
                     height: 50,
                     decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.circular(10.0)
+                      borderRadius: BorderRadius.circular(25.0)
                     ),
                     child: Text("Get Started", style: TextStyle(color: Colors.green[600], fontSize: 15.0, fontWeight: FontWeight.bold )),
                   )
