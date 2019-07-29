@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'load.dart';
 import 'welcome.dart';
 
-var routes=<String, WidgetBuilder>{
-  '/welcome':(BuildContext context)=> Welcome()
-};
 
 void main() => runApp(MyApp());
 
@@ -19,8 +15,7 @@ class MyApp extends StatelessWidget{
         primaryColorDark: Colors.white,
         hintColor: Colors.white
       ),
-      home: Load(),
-      routes: routes,
+      home: Welcome()
     );
   }
 }
