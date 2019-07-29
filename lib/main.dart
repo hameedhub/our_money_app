@@ -13,6 +13,12 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Our Money',
+      theme: ThemeData(
+        primaryColor: Colors.white,
+        accentColor: Colors.white,
+        primaryColorDark: Colors.white,
+        hintColor: Colors.white
+      ),
       home: Load(),
       routes: routes,
     );
