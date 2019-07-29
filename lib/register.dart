@@ -36,10 +36,10 @@ class _Register extends State<Register>{
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
                   Padding(padding: const EdgeInsets.only(top: 10.0, left: 20.0, right: 20.0),
-                  child: Text("Setup account", style: TextStyle(fontSize: 25.0, color: Colors.white, fontWeight: FontWeight.bold)),
+                  child: Text("Setup account", style: TextStyle(fontSize: 25.0, color: Colors.white, fontWeight: FontWeight.bold, fontFamily: "Saira Stencil One")),
                   ),
                   Padding(padding: const EdgeInsets.only(top:10.0, left: 20.0, right: 20.0),
-                  child: Text("Let's get to know you better", style: TextStyle(fontSize: 15.0, color: Colors.white, fontWeight: FontWeight.bold)),
+                  child: Text("Let's get to know you better", style: TextStyle(fontSize: 12.0, color: Colors.white, fontWeight: FontWeight.bold, fontFamily: "Roboto")),
                   )
                   
                 ],
@@ -230,7 +230,7 @@ class _Register extends State<Register>{
                     borderRadius: BorderRadius.circular(25.0),
                     color: Colors.white,
                   ),
-                  child: Text("Create Account", style: TextStyle(color: Colors.green[800], fontSize: 15.0, fontWeight: FontWeight.bold )),
+                  child: Text("Create Account", style: TextStyle(color: Colors.green[800], fontSize: 15.0, fontWeight: FontWeight.bold, fontFamily: "Quicksand" )),
                 ),
                 ),
                 

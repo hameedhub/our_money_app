@@ -35,7 +35,7 @@ class _Login extends State<Login>{
                   Padding(
                   padding: EdgeInsets.only(top: 100.0),
                   child:CircleAvatar(
-                    backgroundColor: Colors.white,
+                    backgroundColor: Colors.green,
                     radius: 40.0,
                     child: Image.asset('images/logo.png'),
                   ),),
@@ -44,10 +44,10 @@ class _Login extends State<Login>{
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Text('our ', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15.0), ),
-                        Text('m', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15.0), ),
-                         Text('o', style: TextStyle(color: Colors.yellowAccent[700], fontWeight: FontWeight.bold, fontSize: 15.0), ),
-                          Text('ney', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15.0), )
+                        Text('our ', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15.0, fontFamily: "Saira Stencil One"), ),
+                        Text('m', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15.0, fontFamily: "Saira Stencil One"), ),
+                         Text('o', style: TextStyle(color: Colors.yellowAccent[700], fontWeight: FontWeight.bold, fontSize: 15.0, fontFamily: "Saira Stencil One"), ),
+                          Text('ney', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15.0, fontFamily: "Saira Stencil One"), )
                       ],
                     ),
                   ),   
@@ -66,7 +66,7 @@ class _Login extends State<Login>{
               ),),
               Padding(
                 padding: EdgeInsets.only(top: 30.0),
-               child:  Text("Login", style: TextStyle(color: Colors.white, fontSize: 24.0, fontWeight: FontWeight.bold )),
+               child:  Text("Login", style: TextStyle(color: Colors.white, fontSize: 24.0, fontWeight: FontWeight.bold, fontFamily: "Saira Stencil One" )),
               ),
               Expanded(
                 child: Padding(
@@ -165,7 +165,7 @@ class _Login extends State<Login>{
                     borderRadius: BorderRadius.circular(25.0),
                     color: Colors.white,
                   ),
-                  child: Text("Login", style: TextStyle(color: Colors.green[800], fontSize: 15.0, fontWeight: FontWeight.bold )),
+                  child: Text("Login", style: TextStyle(color: Colors.green[800], fontSize: 15.0, fontWeight: FontWeight.bold, fontFamily: "Quicksand" )),
                 ),
                 )),
                 ),
@@ -181,7 +181,7 @@ class _Login extends State<Login>{
                   child: Container(
                   alignment: Alignment.center,
                   height: 50.0,
-                  child: Text("Forget Password ?", style: TextStyle(color: Colors.white, fontSize: 15.0, fontWeight: FontWeight.bold )),
+                  child: Text("Forget Password ?", style: TextStyle(color: Colors.white, fontSize: 15.0, fontWeight: FontWeight.bold, fontFamily: "Quicksand" )),
                 ),
                 )),
                 )
@@ -197,7 +197,7 @@ class _Login extends State<Login>{
                         builder: (context)=> Register(),
                       ));
                     },
-                    child:  Text("Create an Account ?", style: TextStyle(color: Colors.white, fontSize: 15.0, fontWeight: FontWeight.bold )),
+                    child:  Text("Create an Account ?", style: TextStyle(color: Colors.white, fontSize: 15.0, fontWeight: FontWeight.bold,fontFamily: "Quicksand" )),
                   ),
                 )
               ],)

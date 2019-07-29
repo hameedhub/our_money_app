@@ -88,9 +88,10 @@ class _Dashboard extends State<Dashboard> with SingleTickerProviderStateMixin {
                               children: <Widget>[
                                 Text('HAMEED',
                                     style: TextStyle(
-                                      fontSize: 20.0,
+                                      fontSize: 18.0,
                                       fontWeight: FontWeight.bold,
                                       color: Colors.white,
+                                      fontFamily: "Quicksand"
                                     )),
                                 Text('0706***7799',
                                     style: TextStyle(
@@ -153,7 +154,7 @@ class _Dashboard extends State<Dashboard> with SingleTickerProviderStateMixin {
                                           style: TextStyle(
                                               fontSize: 30.0,
                                               color: Colors.green[900],
-                                              fontWeight: FontWeight.bold),
+                                              fontWeight: FontWeight.bold, fontFamily: "Quicksand",),
                                         )),
                                   ),
                                   Row(children: <Widget>[
@@ -260,7 +261,7 @@ class _Dashboard extends State<Dashboard> with SingleTickerProviderStateMixin {
                                           'Request Loan',
                                           style: TextStyle(
                                               fontSize: 15.0,
-                                              fontWeight: FontWeight.bold),
+                                              fontWeight: FontWeight.bold, fontFamily: "Quicksand",),
                                         ),
                                         Icon(
                                           Icons.arrow_forward_ios,
@@ -312,8 +313,10 @@ class _Dashboard extends State<Dashboard> with SingleTickerProviderStateMixin {
                                         Text(
                                           'Make Deposit',
                                           style: TextStyle(
+                                              fontFamily: "Quicksand",
                                               fontSize: 15.0,
-                                              fontWeight: FontWeight.bold),
+                                              fontWeight: FontWeight.bold
+                                               ),
                                         ),
                                         Icon(
                                           Icons.arrow_forward_ios,
@@ -366,7 +369,7 @@ class _Dashboard extends State<Dashboard> with SingleTickerProviderStateMixin {
                                           'Bank Accounts',
                                           style: TextStyle(
                                               fontSize: 15.0,
-                                              fontWeight: FontWeight.bold),
+                                              fontWeight: FontWeight.bold, fontFamily: "Quicksand"),
                                         ),
                                         Icon(
                                           Icons.arrow_forward_ios,
@@ -418,6 +421,7 @@ class _Dashboard extends State<Dashboard> with SingleTickerProviderStateMixin {
                                         Text(
                                           'Pay Bills',
                                           style: TextStyle(
+                                            fontFamily: "Quicksand",
                                               fontSize: 15.0,
                                               fontWeight: FontWeight.bold),
                                         ),
