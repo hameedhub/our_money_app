@@ -31,10 +31,10 @@ class _EnterPhone extends State<EnterPhone>{
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
                   Padding(padding: const EdgeInsets.only(top: 70.0, left: 20.0, right: 20.0),
-                  child: Text("Enter your phone number", style: TextStyle(fontSize: 25.0, color: Colors.white, fontWeight: FontWeight.bold)),
+                  child: Text("Enter your phone number", style: TextStyle(fontSize: 25.0, color: Colors.white, fontWeight: FontWeight.bold, fontFamily: "Saira Stencil One")),
                   ),
                   Padding(padding: const EdgeInsets.only(top:10.0, left: 20.0, right: 20.0),
-                  child: Text("You will be sent a one-time passcode to contine authorization", style: TextStyle(fontSize: 15.0, color: Colors.white, fontWeight: FontWeight.bold)),
+                  child: Text("We'll send an SMS with a code to verify your phone number", style: TextStyle(fontSize: 12.0, color: Colors.white, fontWeight: FontWeight.bold, fontFamily: "Roboto")),
                   )
                   
                 ],
@@ -48,7 +48,7 @@ class _EnterPhone extends State<EnterPhone>{
                       cursorColor: Colors.white,
                       decoration: InputDecoration(
                         labelText: "Enter Phone Number",
-                        labelStyle: TextStyle(color: Colors.white,fontSize: 15.0),
+                        labelStyle: TextStyle(color: Colors.white,fontSize: 15.0, fontFamily: "Quicksand"),
                         fillColor: Colors.white,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(25.0),
@@ -90,7 +90,7 @@ class _EnterPhone extends State<EnterPhone>{
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(25.0)
                     ),
-                    child: Text("Continue", style: TextStyle(color: Colors.green[600], fontSize: 15.0, fontWeight: FontWeight.bold )),
+                    child: Text("Continue", style: TextStyle(color: Colors.green[600], fontSize: 15.0, fontWeight: FontWeight.bold, fontFamily: "Quicksand" )),
                   ),
                   ) ,
                   )

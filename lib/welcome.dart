@@ -34,7 +34,7 @@ class _Welcome extends State<Welcome>{
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   CircleAvatar(
-                    backgroundColor: Colors.white,
+                    backgroundColor: Colors.green,
                     radius: 50.0,
                     child: Image.asset('images/logo.png'),
                   ),
@@ -43,10 +43,10 @@ class _Welcome extends State<Welcome>{
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Text('our ', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 25.0), ),
-                        Text('m', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 25.0), ),
-                         Text('o', style: TextStyle(color: Colors.yellowAccent[700], fontWeight: FontWeight.bold, fontSize: 25.0), ),
-                          Text('ney', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 25.0), )
+                        Text('our ', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20.0, fontFamily: "Saira Stencil One",), ),
+                        Text('m', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20.0,fontFamily: "Saira Stencil One"), ),
+                         Text('o', style: TextStyle(color: Colors.yellowAccent[700], fontWeight: FontWeight.bold, fontSize: 20.0, fontFamily: "Saira Stencil One"), ),
+                          Text('ney', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20.0, fontFamily: "Saira Stencil One"), )
                       ],
                     ),
                   )  
@@ -69,7 +69,7 @@ class _Welcome extends State<Welcome>{
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(25.0)
                     ),
-                    child: Text("Get Started", style: TextStyle(color: Colors.green[600], fontSize: 15.0, fontWeight: FontWeight.bold )),
+                    child: Text("Get Started", style: TextStyle(color: Colors.green[600], fontSize: 15.0, fontWeight: FontWeight.bold, fontFamily: "Quicksand" )),
                   )
                     ),
                   )

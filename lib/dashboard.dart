@@ -32,7 +32,7 @@ class _Dashboard extends State<Dashboard> with SingleTickerProviderStateMixin {
                 icon: Icon(Icons.history, color: Colors.grey),
               ),
               Tab(
-                icon: Icon(Icons.receipt, color: Colors.grey),
+                icon: Icon(Icons.inbox, color: Colors.grey),
               ),
               Tab(
                 icon: Icon(Icons.person_outline, color: Colors.grey),
@@ -61,7 +61,7 @@ class _Dashboard extends State<Dashboard> with SingleTickerProviderStateMixin {
                     Column(
                       children: <Widget>[
                         SizedBox(
-                          height: 25.0,
+                          height: 20.0,
                         ),
                         Row(
                           children: <Widget>[
@@ -88,9 +88,10 @@ class _Dashboard extends State<Dashboard> with SingleTickerProviderStateMixin {
                               children: <Widget>[
                                 Text('HAMEED',
                                     style: TextStyle(
-                                      fontSize: 20.0,
+                                      fontSize: 18.0,
                                       fontWeight: FontWeight.bold,
                                       color: Colors.white,
+                                      fontFamily: "Quicksand"
                                     )),
                                 Text('0706***7799',
                                     style: TextStyle(
@@ -109,10 +110,17 @@ class _Dashboard extends State<Dashboard> with SingleTickerProviderStateMixin {
                             elevation: 4.0,
                             borderRadius: BorderRadius.circular(7.0),
                             child: Container(
-                              height: 125.0,
+                              height: 120.0,
                               width: MediaQuery.of(context).size.width / 1.2,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(7.0),
+                                  boxShadow: <BoxShadow>[
+                                  BoxShadow(
+                                    color: Colors.green,
+                                    offset: Offset(1.0, 6.0),
+                                    blurRadius: 40.0,
+                                  ),
+                                ],
                                   color: Colors.white,
                                   gradient: LinearGradient(
                                       colors: [
@@ -121,6 +129,7 @@ class _Dashboard extends State<Dashboard> with SingleTickerProviderStateMixin {
                                       ],
                                       begin: Alignment.centerRight,
                                       end: Alignment(-1.0, -1.0))),
+                                      
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
@@ -143,9 +152,9 @@ class _Dashboard extends State<Dashboard> with SingleTickerProviderStateMixin {
                                         child: Text(
                                           "₦ 200,000",
                                           style: TextStyle(
-                                              fontSize: 35.0,
+                                              fontSize: 30.0,
                                               color: Colors.green[900],
-                                              fontWeight: FontWeight.bold),
+                                              fontWeight: FontWeight.bold, fontFamily: "Quicksand",),
                                         )),
                                   ),
                                   Row(children: <Widget>[
@@ -191,7 +200,29 @@ class _Dashboard extends State<Dashboard> with SingleTickerProviderStateMixin {
                           height: 15.0,
                         ),
                         Padding(
-                            padding: EdgeInsets.all(10.0),
+                          padding: EdgeInsets.only(top: 5.0, right: 10.0, left: 10.0, bottom: 5.0),
+                          child: Container(
+                            height: 100,
+                            decoration: BoxDecoration(
+                              color: Colors.green,
+                              borderRadius: BorderRadius.circular(20.0),
+                              boxShadow: <BoxShadow>[
+                                  BoxShadow(
+                                    color: Colors.green,
+                                    offset: Offset(1.0, 6.0),
+                                    blurRadius: 40.0,
+                                  ),
+                                ],
+                              image: DecorationImage(
+                                image: AssetImage('images/ads.jpeg'),
+                                fit: BoxFit.fill
+                              ),
+                            ),
+                          ),
+                        ),
+
+                        Padding(
+                            padding: EdgeInsets.all(5.0),
                             child: Container(
                               height: 70,
                               decoration: BoxDecoration(
@@ -199,7 +230,7 @@ class _Dashboard extends State<Dashboard> with SingleTickerProviderStateMixin {
                                 borderRadius: BorderRadius.circular(5.0),
                                 boxShadow: <BoxShadow>[
                                   BoxShadow(
-                                    color: Colors.green,
+                                    color: Colors.lightGreen,
                                     offset: Offset(1.0, 6.0),
                                     blurRadius: 40.0,
                                   ),
@@ -207,6 +238,7 @@ class _Dashboard extends State<Dashboard> with SingleTickerProviderStateMixin {
                               ),
                               child: Row(
                                 children: <Widget>[
+                                SizedBox(width: 10.0),
                                   Container(
                                     height: 50.0,
                                     width: 50.0,
@@ -217,7 +249,7 @@ class _Dashboard extends State<Dashboard> with SingleTickerProviderStateMixin {
                                     child: Icon(Icons.account_balance_wallet,
                                         color: Colors.red, size: 25.0),
                                   ),
-                                  SizedBox(width: 25.0),
+                                  SizedBox(width: 15.0),
                                   Container(
                                     width: MediaQuery.of(context).size.width -
                                         100.0,
@@ -228,6 +260,168 @@ class _Dashboard extends State<Dashboard> with SingleTickerProviderStateMixin {
                                         Text(
                                           'Request Loan',
                                           style: TextStyle(
+                                              fontSize: 15.0,
+                                              fontWeight: FontWeight.bold, fontFamily: "Quicksand",),
+                                        ),
+                                        Icon(
+                                          Icons.arrow_forward_ios,
+                                          color: Colors.black,
+                                          size: 20.0,
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            )),
+                             Padding(
+                            padding: EdgeInsets.all(5.0),
+                            child: Container(
+                              height: 70,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(5.0),
+                                boxShadow: <BoxShadow>[
+                                  BoxShadow(
+                                    color: Colors.lightGreen,
+                                    offset: Offset(1.0, 6.0),
+                                    blurRadius: 40.0,
+                                  ),
+                                ],
+                              ),
+                              child: Row(
+                                children: <Widget>[
+                                SizedBox(width: 10.0),
+                                  Container(
+                                    height: 50.0,
+                                    width: 50.0,
+                                    decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(5.0),
+                                        color: Colors.blue.withOpacity(0.3)),
+                                    child: Icon(Icons.insert_chart,
+                                        color: Colors.blue, size: 25.0),
+                                  ),
+                                  SizedBox(width: 15.0),
+                                  Container(
+                                    width: MediaQuery.of(context).size.width -
+                                        100.0,
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: <Widget>[
+                                        Text(
+                                          'Make Deposit',
+                                          style: TextStyle(
+                                              fontFamily: "Quicksand",
+                                              fontSize: 15.0,
+                                              fontWeight: FontWeight.bold
+                                               ),
+                                        ),
+                                        Icon(
+                                          Icons.arrow_forward_ios,
+                                          color: Colors.black,
+                                          size: 20.0,
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            )),
+                             Padding(
+                            padding: EdgeInsets.all(5.0),
+                            child: Container(
+                              height: 70,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(5.0),
+                                boxShadow: <BoxShadow>[
+                                  BoxShadow(
+                                    color: Colors.lightGreen,
+                                    offset: Offset(1.0, 6.0),
+                                    blurRadius: 40.0,
+                                  ),
+                                ],
+                              ),
+                              child: Row(
+                                children: <Widget>[
+                                SizedBox(width: 10.0),
+                                  Container(
+                                    height: 50.0,
+                                    width: 50.0,
+                                    decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(5.0),
+                                        color: Colors.green.withOpacity(0.3)),
+                                    child: Icon(Icons.account_balance,
+                                        color: Colors.green, size: 25.0),
+                                  ),
+                                  SizedBox(width: 15.0),
+                                  Container(
+                                    width: MediaQuery.of(context).size.width -
+                                        100.0,
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: <Widget>[
+                                        Text(
+                                          'Bank Accounts',
+                                          style: TextStyle(
+                                              fontSize: 15.0,
+                                              fontWeight: FontWeight.bold, fontFamily: "Quicksand"),
+                                        ),
+                                        Icon(
+                                          Icons.arrow_forward_ios,
+                                          color: Colors.black,
+                                          size: 20.0,
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            )),
+                            Padding(
+                            padding: EdgeInsets.all(5.0),
+                            child: Container(
+                              height: 70,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(5.0),
+                                boxShadow: <BoxShadow>[
+                                  BoxShadow(
+                                    color: Colors.lightGreen,
+                                    offset: Offset(1.0, 6.0),
+                                    blurRadius: 40.0,
+                                  ),
+                                ],
+                              ),
+                              child: Row(
+                                children: <Widget>[
+                                SizedBox(width: 10.0),
+                                  Container(
+                                    height: 50.0,
+                                    width: 50.0,
+                                    decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(5.0),
+                                        color: Colors.yellow.withOpacity(0.1)),
+                                    child: Icon(Icons.payment,
+                                        color: Colors.yellow[600], size: 25.0),
+                                  ),
+                                  SizedBox(width: 15.0),
+                                  Container(
+                                    width: MediaQuery.of(context).size.width -
+                                        100.0,
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: <Widget>[
+                                        Text(
+                                          'Pay Bills',
+                                          style: TextStyle(
+                                            fontFamily: "Quicksand",
                                               fontSize: 15.0,
                                               fontWeight: FontWeight.bold),
                                         ),
