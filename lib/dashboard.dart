@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'profile.dart';
 
 class Dashboard extends StatefulWidget {
   @override
@@ -26,7 +27,7 @@ class _Dashboard extends State<Dashboard> with SingleTickerProviderStateMixin {
             indicatorColor: Colors.white,
             tabs: <Widget>[
               Tab(
-                icon: Icon(Icons.home, color: Colors.lightGreenAccent[700]),
+                icon: Icon(Icons.home, color: Colors.green),
               ),
               Tab(
                 icon: Icon(Icons.history, color: Colors.grey),
@@ -34,8 +35,15 @@ class _Dashboard extends State<Dashboard> with SingleTickerProviderStateMixin {
               Tab(
                 icon: Icon(Icons.inbox, color: Colors.grey),
               ),
-              Tab(
+              GestureDetector(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context)=> Profile()
+                  ));
+                } ,
+                child: Tab(
                 icon: Icon(Icons.person_outline, color: Colors.grey),
+              )
               )
             ],
           ),
