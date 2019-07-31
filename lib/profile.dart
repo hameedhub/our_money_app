@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dashboard.dart';
+import 'myCards.dart';
 
 class Profile extends StatefulWidget{
   @override
@@ -39,7 +40,7 @@ class _Profile extends State<Profile> with SingleTickerProviderStateMixin{
                 icon: Icon(Icons.history, color: Colors.grey),
               ),
               Tab(
-                icon: Icon(Icons.inbox, color: Colors.grey),
+                icon: Icon(Icons.chat, color: Colors.grey),
               ),
                Tab(
                 icon: Icon(Icons.person_outline, color: Colors.green),
@@ -56,10 +57,10 @@ class _Profile extends State<Profile> with SingleTickerProviderStateMixin{
               Hero(
                 tag: 'images/avatar.png',
                 child: Container(
-                  height: 100.0,
-                  width: 100.0,
+                  height: 70.0,
+                  width: 70.0,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50.0),
+                    borderRadius: BorderRadius.circular(35.0),
                     image: DecorationImage(
                       fit: BoxFit.cover,
                       image: AssetImage('images/avatar.png')
@@ -87,7 +88,7 @@ class _Profile extends State<Profile> with SingleTickerProviderStateMixin{
                   Container(
                     height: 60.0,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20.0),
+                      borderRadius: BorderRadius.circular(10.0),
                       boxShadow: <BoxShadow>[
                                   BoxShadow(
                                     color: Colors.green,
@@ -117,7 +118,8 @@ class _Profile extends State<Profile> with SingleTickerProviderStateMixin{
                         ))
                       ],
                     ),
-                    Column(
+                    GestureDetector(
+                      child:Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                          SizedBox(height: 5.0,),
@@ -130,6 +132,13 @@ class _Profile extends State<Profile> with SingleTickerProviderStateMixin{
                         ))
                       ],
                     ),
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context) => MyCards()
+                        ));
+                      },
+                    ),
+                    
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[

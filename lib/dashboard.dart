@@ -33,7 +33,7 @@ class _Dashboard extends State<Dashboard> with SingleTickerProviderStateMixin {
                 icon: Icon(Icons.history, color: Colors.grey),
               ),
               Tab(
-                icon: Icon(Icons.inbox, color: Colors.grey),
+                icon: Icon(Icons.chat, color: Colors.grey),
               ),
               GestureDetector(
                 onTap: (){
