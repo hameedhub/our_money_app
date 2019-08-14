@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dashboard.dart';
 import 'myCards.dart';
+import 'account.dart';
 
 class Profile extends StatefulWidget{
   @override
@@ -138,8 +139,8 @@ class _Profile extends State<Profile> with SingleTickerProviderStateMixin{
                         ));
                       },
                     ),
-                    
-                    Column(
+                    GestureDetector(
+                      child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         SizedBox(height: 5.0,),
@@ -152,6 +153,13 @@ class _Profile extends State<Profile> with SingleTickerProviderStateMixin{
                         ))
                       ],
                     ),
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context)=> Account()
+                        ));
+                      },
+                    ),
+                    
                     SizedBox(width:1.0)
                   ],
                 ),

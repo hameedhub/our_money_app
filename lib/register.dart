@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'utilities/general.dart';
 import 'login.dart';
 
 class Register extends StatefulWidget{
@@ -56,7 +57,7 @@ class _Register extends State<Register>{
                         labelStyle: TextStyle(color: Colors.white,fontSize: 14.0),
                         fillColor: Colors.white,
                         border: OutlineInputBorder(
-                          borderRadius: new BorderRadius.circular(25.0),
+                          borderRadius: new BorderRadius.circular(7.0),
                           borderSide: new BorderSide(
                             color: Colors.white
                           ),
@@ -90,7 +91,7 @@ class _Register extends State<Register>{
                         labelStyle: TextStyle(color: Colors.white,fontSize: 14.0),
                         fillColor: Colors.white,
                         border: OutlineInputBorder(
-                          borderRadius: new BorderRadius.circular(25.0),
+                          borderRadius: new BorderRadius.circular(7.0),
                           borderSide: new BorderSide(
                             color: Colors.white
                           ),
@@ -124,7 +125,7 @@ class _Register extends State<Register>{
                         labelStyle: TextStyle(color: Colors.white,fontSize: 14.0),
                         fillColor: Colors.white,
                         border: OutlineInputBorder(
-                          borderRadius: new BorderRadius.circular(25.0),
+                          borderRadius: new BorderRadius.circular(7.0),
                           borderSide: new BorderSide(
                             color: Colors.white
                           ),
@@ -159,7 +160,7 @@ class _Register extends State<Register>{
                         labelStyle: TextStyle(color: Colors.white,fontSize: 14.0),
                         fillColor: Colors.white,
                         border: OutlineInputBorder(
-                          borderRadius: new BorderRadius.circular(25.0),
+                          borderRadius: new BorderRadius.circular(7.0),
                           borderSide: new BorderSide(
                             color: Colors.white
                           ),
@@ -193,7 +194,7 @@ class _Register extends State<Register>{
                         labelStyle: TextStyle(color: Colors.white,fontSize: 14.0),
                         fillColor: Colors.white,
                         border: OutlineInputBorder(
-                          borderRadius: new BorderRadius.circular(25.0),
+                          borderRadius: new BorderRadius.circular(7.0),
                           borderSide: new BorderSide(
                             color: Colors.white
                           ),
@@ -223,15 +224,7 @@ class _Register extends State<Register>{
                       builder:(context)=> Login()
                     ));
                   },
-                  child: Container(
-                  alignment: Alignment.center,
-                  height: 50.0,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(25.0),
-                    color: Colors.white,
-                  ),
-                  child: Text("Create Account", style: TextStyle(color: Colors.green[800], fontSize: 15.0, fontWeight: FontWeight.bold, fontFamily: "Quicksand" )),
-                ),
+                  child: defaultButton('Create an Account', Colors.green)
                 ),
                 
               )

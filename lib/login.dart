@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'register.dart';
 import 'forgetPassword.dart';
 import 'dashboard.dart';
+import 'utilities/general.dart';
 
 class Login extends StatefulWidget{
  @override
@@ -91,7 +92,7 @@ class _Login extends State<Login>{
                         labelStyle: TextStyle(color: Colors.white,fontSize: 14.0),
                         fillColor: Colors.white,
                         border: OutlineInputBorder(
-                          borderRadius: new BorderRadius.circular(25.0),
+                          borderRadius: new BorderRadius.circular(7.0),
                           borderSide: new BorderSide(
                             color: Colors.white
                           ),
@@ -126,7 +127,7 @@ class _Login extends State<Login>{
                         labelStyle: TextStyle(color: Colors.white,fontSize: 14.0),
                         fillColor: Colors.white,
                         border: OutlineInputBorder(
-                          borderRadius: new BorderRadius.circular(25.0),
+                          borderRadius: new BorderRadius.circular(7.0),
                           borderSide: new BorderSide(
                             color: Colors.white
                           ),
@@ -158,15 +159,7 @@ class _Login extends State<Login>{
                       builder:(context)=> Dashboard()
                     ));
                   },
-                  child: Container(
-                  alignment: Alignment.center,
-                  height: 50.0,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(25.0),
-                    color: Colors.white,
-                  ),
-                  child: Text("Login", style: TextStyle(color: Colors.green[800], fontSize: 15.0, fontWeight: FontWeight.bold, fontFamily: "Quicksand" )),
-                ),
+                  child: defaultButton('Login', Colors.green)
                 )),
                 ),
                 Expanded(

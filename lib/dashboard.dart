@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:our_money_app/transaction.dart';
 import 'profile.dart';
+import 'nofication/notice.dart';
 
 class Dashboard extends StatefulWidget {
   @override
@@ -29,11 +31,29 @@ class _Dashboard extends State<Dashboard> with SingleTickerProviderStateMixin {
               Tab(
                 icon: Icon(Icons.home, color: Colors.green),
               ),
-              Tab(
+              GestureDetector(
+                child:Tab(
                 icon: Icon(Icons.history, color: Colors.grey),
               ),
-              Tab(
+              onTap: (){
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context)=> Transaction()
+                  ));
+                  
+                },
+              
+              ),
+              
+              GestureDetector(
+                child: Tab(
                 icon: Icon(Icons.chat, color: Colors.grey),
+              ),
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (context)=> Notice(),
+                  ));
+                  
+                },
               ),
               GestureDetector(
                 onTap: (){

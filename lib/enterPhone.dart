@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:our_money_app/utilities/general.dart';
 import 'register.dart';
 
 class EnterPhone extends StatefulWidget{
@@ -21,7 +22,7 @@ class _EnterPhone extends State<EnterPhone>{
                 decoration: BoxDecoration(
                   color: Colors.lightGreen,
                   gradient: LinearGradient(
-                    colors:[ Colors.green[700], Colors.lightGreenAccent],
+                    colors:[Colors.green[700], Colors.green[700]],
                     begin: Alignment.centerRight,
                     end: Alignment.bottomCenter
                   )
@@ -51,7 +52,7 @@ class _EnterPhone extends State<EnterPhone>{
                         labelStyle: TextStyle(color: Colors.white,fontSize: 15.0, fontFamily: "Quicksand"),
                         fillColor: Colors.white,
                         border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(25.0),
+                          borderRadius: BorderRadius.circular(7.0),
                           borderSide: BorderSide(
                             color: Colors.white,
                             style: BorderStyle.solid
@@ -90,7 +91,7 @@ class _EnterPhone extends State<EnterPhone>{
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(25.0)
                     ),
-                    child: Text("Continue", style: TextStyle(color: Colors.green[600], fontSize: 15.0, fontWeight: FontWeight.bold, fontFamily: "Quicksand" )),
+                    child: defaultButton('Continue', Colors.green)
                   ),
                   ) ,
                   )
