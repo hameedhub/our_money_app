@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'enterPhone.dart';
+import 'package:our_money_app/routes/login.dart';
+//import 'enterPhone.dart';
 
 class Welcome extends StatefulWidget{
   @override
@@ -130,8 +131,9 @@ class _Welcome extends State<Welcome>{
                      onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => EnterPhone())
-                      );},
+                        MaterialPageRoute(builder: (context) => Login())
+                      );
+                      },
                      child: Container(
                     alignment: Alignment.center,
                     height: 50,

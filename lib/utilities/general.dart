@@ -7,7 +7,7 @@ Widget greenBackground(){
       decoration: BoxDecoration(
           color: Colors.lightGreen,
           gradient: LinearGradient(
-              colors: [Colors.green[700], Colors.lightGreen[800]],
+              colors: [Colors.green[700],Colors.green[700], Colors.green[800],Colors.green[700],Colors.green[500], Colors.green[700]],
               begin: Alignment.centerRight,
               end: Alignment.bottomCenter)),
     );

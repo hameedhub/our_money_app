@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'register.dart';
-import 'forgetPassword.dart';
-import 'dashboard.dart';
-import 'utilities/general.dart';
+import 'package:our_money_app/dashboard.dart';
+import 'package:our_money_app/forgetPassword.dart';
+import 'package:our_money_app/routes/register.dart';
+import 'package:our_money_app/utilities/general.dart';
 
 class Login extends StatefulWidget{
  @override
@@ -190,7 +190,7 @@ class _Login extends State<Login>{
                         builder: (context)=> Register(),
                       ));
                     },
-                    child:  Text("Create an Account ?", style: TextStyle(color: Colors.white, fontSize: 15.0, fontWeight: FontWeight.bold,fontFamily: "Quicksand" )),
+                    child:  Text("Create an Account ?", style: TextStyle(color: Colors.white, fontSize: 18.0, fontWeight: FontWeight.bold,fontFamily: "Quicksand" )),
                   ),
                 )
               ],)

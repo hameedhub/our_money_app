@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:our_money_app/routes/login.dart';
 import 'utilities/general.dart';
-import 'login.dart';
 
 class Register extends StatefulWidget{
   @override
