@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:our_money_app/dashboard.dart';
-import 'package:our_money_app/nofication/sendMessage.dart';
+//import 'package:our_money_app/nofication/sendMessage.dart';
 import 'package:our_money_app/utilities/general.dart';
 
 
@@ -17,45 +16,10 @@ class Transaction extends StatefulWidget {
 class _Transaction extends State<Transaction> with SingleTickerProviderStateMixin{
   TabController tabController;
   GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
- @override
-  void initState() {
-    super.initState();
-    tabController = TabController(length:4, vsync: this);
-
-  }
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: _scaffoldKey,
-      bottomNavigationBar: Material(
-        color: Colors.white,
-        child: TabBar(
-          controller: tabController,
-          indicatorColor: Colors.green,
-            tabs: <Widget>[
-            GestureDetector(
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(
-                    builder: (context)=> Dashboard()
-                  ));
-                } ,
-                child:
-             Tab(
-                icon: Icon(Icons.home, color: Colors.grey),
-              ),),
-              Tab(
-                icon: Icon(Icons.history, color: Colors.green)
-              ),
-              Tab(
-                icon: Icon(Icons.chat, color: Colors.grey),
-              ),
-               Tab(
-                icon: Icon(Icons.person_outline, color: Colors.grey),
-              )
-          ],
-        ),
-      ),
-      
       body: Stack(
         children: <Widget>[
           whiteBackground(),
@@ -64,7 +28,13 @@ class _Transaction extends State<Transaction> with SingleTickerProviderStateMixi
             child: Stack(
               children: <Widget>[
                 Container(
-                  color: Colors.green[300],
+                 decoration: BoxDecoration(
+                    color: Colors.green[500],
+                    gradient: LinearGradient(
+              colors: [Colors.green[700],Colors.green[700], Colors.green[800],Colors.green[700],Colors.green[500], Colors.green[800], Colors.green[700]],
+              begin: Alignment.centerRight,
+              end: Alignment.bottomCenter)
+                  ),
                   width: MediaQuery.of(context).size.width,
                   height: 100.0,
                   child: Center(
@@ -134,12 +104,12 @@ class _Transaction extends State<Transaction> with SingleTickerProviderStateMixi
                             height: 100,
                             decoration: BoxDecoration(
                               color: Colors.green,
-                              borderRadius: BorderRadius.circular(20.0),
+                              borderRadius: BorderRadius.circular(5.0),
                               boxShadow: <BoxShadow>[
                                   BoxShadow(
                                     color: Colors.green,
-                                    offset: Offset(1.0, 6.0),
-                                    blurRadius: 40.0,
+                                    offset: Offset(1.0, 1.0),
+                                    blurRadius: 20.0,
                                   ),
                                 ],
                               image: DecorationImage(

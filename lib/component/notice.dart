@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:our_money_app/nofication/sendMessage.dart';
+import 'package:our_money_app/component/sendMessage.dart';
 import 'package:our_money_app/utilities/general.dart';
-import '../dashboard.dart';
 
 class Notice extends StatefulWidget {
   @override
@@ -25,36 +24,7 @@ class _Notice extends State<Notice> with SingleTickerProviderStateMixin{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: _scaffoldKey,
-      bottomNavigationBar: Material(
-        color: Colors.white,
-        child: TabBar(
-          controller: tabController,
-          indicatorColor: Colors.green,
-            tabs: <Widget>[
-            GestureDetector(
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(
-                    builder: (context)=> Dashboard()
-                  ));
-                } ,
-                child:
-             Tab(
-                icon: Icon(Icons.home, color: Colors.grey),
-              ),),
-              Tab(
-                icon: Icon(Icons.history, color: Colors.grey),
-              ),
-              Tab(
-                icon: Icon(Icons.chat, color: Colors.green),
-              ),
-               Tab(
-                icon: Icon(Icons.person_outline, color: Colors.grey),
-              )
-          ],
-        ),
-      ),
-      floatingActionButton: new FloatingActionButton(
+      floatingActionButton: FloatingActionButton(
       elevation: 0.0,
       child: new Icon(Icons.chat_bubble, color: Colors.white,),
       backgroundColor: Colors.green[400],
@@ -72,7 +42,13 @@ class _Notice extends State<Notice> with SingleTickerProviderStateMixin{
             child: Stack(
               children: <Widget>[
                 Container(
-                  color: Colors.green[300],
+                  decoration: BoxDecoration(
+                    color: Colors.green[500],
+                    gradient: LinearGradient(
+              colors: [Colors.green[700],Colors.green[700], Colors.green[800],Colors.green[700],Colors.green[500], Colors.green[800], Colors.green[700]],
+              begin: Alignment.centerRight,
+              end: Alignment.bottomCenter)
+                  ),
                   width: MediaQuery.of(context).size.width,
                   height: 100.0,
                   child: Center(
@@ -142,12 +118,12 @@ class _Notice extends State<Notice> with SingleTickerProviderStateMixin{
                             height: 100,
                             decoration: BoxDecoration(
                               color: Colors.green,
-                              borderRadius: BorderRadius.circular(20.0),
+                              borderRadius: BorderRadius.circular(5.0),
                               boxShadow: <BoxShadow>[
                                   BoxShadow(
                                     color: Colors.green,
-                                    offset: Offset(1.0, 6.0),
-                                    blurRadius: 40.0,
+                                    offset: Offset(1.0, 1.0),
+                                    blurRadius: 20.0,
                                   ),
                                 ],
                               image: DecorationImage(
@@ -157,6 +133,7 @@ class _Notice extends State<Notice> with SingleTickerProviderStateMixin{
                             ),
                           ),
                         ),
+                        SizedBox(height: 30.0,),
                         Padding(padding: EdgeInsets.only(left: 10.0, right: 5.0),
                         child: Container(
                           decoration: BoxDecoration(
@@ -173,7 +150,7 @@ class _Notice extends State<Notice> with SingleTickerProviderStateMixin{
                           ),
                           child: ListTile(
                               leading: CircleAvatar(
-                                backgroundImage: AssetImage('images/avatar.png'),
+                                backgroundImage: AssetImage('images/profile.jpg'),
                               ),
                               title: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -195,7 +172,7 @@ class _Notice extends State<Notice> with SingleTickerProviderStateMixin{
                         )
                         ),
                         
-                         Padding(padding: EdgeInsets.only(left: 10.0, right: 5.0, top: 5.0),
+                         Padding(padding: EdgeInsets.only(left: 10.0, right: 5.0, top: 12.0),
                         child: Container(
                           decoration: BoxDecoration(
                             color: Colors.white,
@@ -211,7 +188,7 @@ class _Notice extends State<Notice> with SingleTickerProviderStateMixin{
                           ),
                           child: ListTile(
                               leading: CircleAvatar(
-                                backgroundImage: AssetImage('images/avatar.png'),
+                                backgroundImage: AssetImage('images/profile.jpg'),
                               ),
                               title: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -16,12 +16,14 @@ Widget greenBackground(){
 Widget whiteBackground(){
   return Container(
       decoration: BoxDecoration(
-          color: Colors.white,
-          gradient: LinearGradient(
-              colors: [Colors.lightGreen[100], Colors.white24, Colors.lightGreen[100]],
-              begin: Alignment.centerRight,
-              end: Alignment.bottomCenter)),
-    );
+          color: Colors.grey[200]
+    //       gradient: LinearGradient(
+    //           //colors: [Colors.lightGreen[100], Colors.white24, Colors.lightGreen[100]],
+    //           begin: Alignment.centerRight,
+    //           end: Alignment.bottomCenter)),
+    // 
+    )
+  );
 }
 
 // Input form
