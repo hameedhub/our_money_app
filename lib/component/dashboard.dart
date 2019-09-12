@@ -102,7 +102,7 @@ class _Dashboard extends State<Dashboard> with TickerProviderStateMixin{
             onPressed: () {
             
               Navigator.push(context, MaterialPageRoute(
-                   builder: (context) => Request()
+                   builder: (context) => Request(user)
                    ));
               // if (_controller.isDismissed) {
               //   _controller.forward();
