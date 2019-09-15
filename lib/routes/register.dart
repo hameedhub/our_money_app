@@ -25,7 +25,7 @@ class _Register extends State<Register> {
 
   @override
   Widget build(BuildContext context) {
-    PageController _pageController = PageController(initialPage: 2);
+    PageController _pageController = PageController(initialPage: 0);
 
     void _goto(int val) {
       _pageController.animateToPage(val,

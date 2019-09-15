@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:our_money_app/forgetPassword.dart';
 import 'package:our_money_app/model/User.dart';
+import 'package:our_money_app/routes/forgetPassword.dart';
 import 'package:our_money_app/routes/index.dart';
 import 'package:our_money_app/routes/register.dart';
 import 'package:our_money_app/services/storage.dart';
@@ -246,8 +246,8 @@ _isLoading(){
                            Container(
                               child: Visibility(
                                 visible:_isWorking,
-                                child: Padding(
-                                  padding: EdgeInsets.only(top: 20.0, left: 50.0),
+                                child: Container(
+                                  padding: EdgeInsets.only(top: 20.0, left: 80.0),
                                   child: CircularProgressIndicator(
                                     strokeWidth: 2,
                                   ),

@@ -35,6 +35,7 @@ void fetchTrans() async {
         setState(() {
 
          trans = result['data'] as List;
+         //print(trans);
          if(trans.length > 0){
            isWorking =false;
          }else{
@@ -162,7 +163,7 @@ void fetchTrans() async {
                                     width: 20.0
                                   ),
                                   Text(
-                                    'Fri Mar 01 2019', style: TextStyle(fontSize: 12),
+                                    trans[index]['request_time'].toString(), style: TextStyle(fontSize: 12),
                                   ),
                                 ],
                               ),
