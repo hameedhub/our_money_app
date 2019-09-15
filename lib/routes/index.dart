@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:fancy_bottom_navigation/fancy_bottom_navigation.dart';
 import 'package:our_money_app/component/dashboard.dart';
-import 'package:our_money_app/component/notice.dart';
 import 'package:our_money_app/component/profile.dart';
 import 'package:our_money_app/component/transaction.dart';
-import 'package:our_money_app/model/User.dart';
-import 'package:our_money_app/services/storage.dart';
-import 'package:our_money_app/services/userData.dart';
+
 
 class Index extends StatefulWidget{
   final user;
@@ -22,8 +20,8 @@ class _Index extends State<Index> with SingleTickerProviderStateMixin {
   int currentTab = 0;
   Dashboard dashboard;
   Transaction transaction;
-  Notice notice;
   Profile profile;
+  List trans = List();
   
   List<Widget>pages;
   Widget currentPage;
@@ -35,10 +33,10 @@ class _Index extends State<Index> with SingleTickerProviderStateMixin {
   @override
   void initState() {
         dashboard = Dashboard(user);
-        transaction = Transaction();
-        notice = Notice();
+        transaction = Transaction(user);
+        //notice = Notice();
         profile = Profile(user);
-        pages =[dashboard, transaction, notice, profile];
+        pages =[ profile, dashboard, transaction,];
     
         currentPage = dashboard;
         super.initState();
@@ -51,46 +49,60 @@ class _Index extends State<Index> with SingleTickerProviderStateMixin {
         return Scaffold(
           body: currentPage,
           bottomNavigationBar:
-           BottomNavigationBar(
-             onTap: ( int index) {
-               setState((){
-                 currentTab = index;
-                 
-                 currentPage = pages[index];
-                 print(currentTab);
-               });
+          FancyBottomNavigation(
+            circleColor: Colors.green[600],
+            inactiveIconColor: Colors.green[600],
+            initialSelection: 1,
+    tabs: [
+       
+        TabData(iconData: Icons.account_circle, title: "Profile"),
+        TabData(iconData: Icons.home, title: "Home",),
+         TabData(iconData: Icons.autorenew, title: "Transaction")
+        
+    ],
+    onTabChangedListener: (int index) {
+        setState(() {
+        currentPage = pages[index];
+        });
+    },
+        //    BottomNavigationBar(
+        //      onTap: ( int index) {
+        //        setState((){
+        //          currentTab = index;
+        //          currentPage = pages[index];
+        //        });
                
-          },
-          currentIndex: currentTab,
-          fixedColor:Colors.green,
-          type: BottomNavigationBarType.fixed,
-          items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
+        //   },
+        //   currentIndex: currentTab,
+        //   fixedColor:Colors.green,
+        //   type: BottomNavigationBarType.fixed,
+        //   items: <BottomNavigationBarItem>[
+        //     BottomNavigationBarItem(
               
-                backgroundColor: Colors.white,
-                icon: Icon(
-                  Icons.home,
-                ),
-                title: Text("Dashboard")),
-            BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.notifications,
-                ),
-                title: Text("Transaction")),
-            BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.chat,
-                ),
-                title: Text("Notification")),
-            BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.account_circle,
-                ),
-                title: Text("Profile")),
-          ],
+        //         backgroundColor: Colors.white,
+        //         icon: Icon(
+        //           Icons.home,
+        //         ),
+        //         title: Text("Dashboard")),
+        //     BottomNavigationBarItem(
+        //         icon: Icon(
+        //           Icons.notifications,
+        //         ),
+        //         title: Text("Transaction")),
+        //     BottomNavigationBarItem(
+        //         icon: Icon(
+        //           Icons.chat,
+        //         ),
+        //         title: Text("Notification")),
+        //     BottomNavigationBarItem(
+        //         icon: Icon(
+        //           Icons.account_circle,
+        //         ),
+        //         title: Text("Profile")),
+        //   ],
+        // )
         )
         );
       }
-    
     
 }

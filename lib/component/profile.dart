@@ -17,7 +17,6 @@ class Profile extends StatefulWidget{
 }
 
 class _Profile extends State<Profile>{
-  bool isLoading = true;
   final user;
   _Profile(this.user);
 
@@ -26,6 +25,8 @@ class _Profile extends State<Profile>{
   Widget pageContent;
   List list = List();
   List list2 = List();
+  bool show = true;
+   bool isLoading = true;
 
   @override
   void initState() {
@@ -42,15 +43,17 @@ class _Profile extends State<Profile>{
     if (result.containsKey('data')) {
       setState(() {
         list = result['data'] as List;
-        isLoading = false;
+        if(list.length > 0 ){
+           isLoading =false;
+         }else{
+           show = false;
+         }
       });
-    } else {
-      setState(() {
-        isLoading = false;
-      });
+    }else{
+    setState((){
+      show = false;
+    });
     }
-    
-    
   }
     fetchAccount() async {
     final result = await ApiService.getData('accounts/view', user.token);
@@ -77,9 +80,7 @@ class _Profile extends State<Profile>{
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
-          whiteBackground(),
-          ListView(
-            children: <Widget>[
+          
               Container(
                height: 250,
             child: Stack(
@@ -102,22 +103,22 @@ class _Profile extends State<Profile>{
                         Hero(
                 tag: 'images/avatar.png',
                 child: Container(
-                  height: 100.0,
-                  width: 100.0,
+                  height: 80.0,
+                  width: 80.0,
                   decoration: BoxDecoration(
                     
                     color: Colors.white,
                     boxShadow: <BoxShadow>[
                                   BoxShadow(
                                     color: Colors.white,
-                                    offset: Offset(1.0, 1.0),
+                                    offset: Offset(1.0, 8.0),
                                     blurRadius: 3.0,
                                   ),
                                 ],
-                    borderRadius: BorderRadius.circular(50.0),
+                    borderRadius: BorderRadius.circular(40.0),
                       image: DecorationImage(
                       fit: BoxFit.contain,
-                      image: AssetImage('images/profile.jpg')
+                      image: AssetImage('images/profile1.jpeg')
                     )
                   ),
                 ),
@@ -187,7 +188,7 @@ class _Profile extends State<Profile>{
                             onPressed: () {
                               fetchCard();
                              setState(() {
-                               pageContent = myCard(context, user, isLoading, list);
+                               pageContent = myCard(context, user, isLoading, list, show);
                              });
                             },
                           ),
@@ -213,7 +214,7 @@ class _Profile extends State<Profile>{
                             onPressed: () {
                              setState(() {
                                fetchAccount();
-                               pageContent = account(context, user, isLoading, list2);
+                               pageContent = account(context, user, isLoading, list2, show);
                              });
                             },
                           ),
@@ -235,12 +236,12 @@ class _Profile extends State<Profile>{
                 ),
                   
                 ])
-                ),  
-                pageContent,
+                ), 
 
-
-            ],
-          )
+                Padding(
+                  padding: EdgeInsets.only(top:250),
+                  child: pageContent,
+                )     
           
         ]
       ),
@@ -254,7 +255,9 @@ Widget profile (user){
 return Container(
             padding: EdgeInsets.only(top: 10),
              child:
-              Column(
+            ListView(
+              children: <Widget>[
+                 Column(
                 children: <Widget>[
                   SizedBox(height: 20.0,),
                   Column(
@@ -379,39 +382,36 @@ return Container(
                     )
                   ),
 
-                  Padding(
-                    padding: EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0),
-                    child: Container(
-                      alignment: Alignment.center,
-                      height: 50.0,
-                      decoration: BoxDecoration(
-                        color: Colors.green[400],
-                        border: Border.all(
-                          color: Colors.green,
-                          width: 1.0
-                        ),
-                        borderRadius: BorderRadius.circular(7.0)
-                      ),
-                      child: Text("Update", style: TextStyle(color: Colors.white, fontSize: 18.0, fontWeight: FontWeight.bold, fontFamily: 'Quicksand'),)
-                    ),
-                  )
+                  // Padding(
+                  //   padding: EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0),
+                  //   child: Container(
+                  //     alignment: Alignment.center,
+                  //     height: 50.0,
+                  //     decoration: BoxDecoration(
+                  //       color: Colors.green[400],
+                  //       border: Border.all(
+                  //         color: Colors.green,
+                  //         width: 1.0
+                  //       ),
+                  //       borderRadius: BorderRadius.circular(7.0)
+                  //     ),
+                  //     child: Text("Update", style: TextStyle(color: Colors.white, fontSize: 18.0, fontWeight: FontWeight.bold, fontFamily: 'Quicksand'),)
+                  //   ),
+                  // )
                 ],
               ),
+              ],
+            )
+             
             
           );
 }
 
-Widget myCard (BuildContext context, user, isLoading, list){
+Widget myCard (BuildContext context, user, isLoading, list, show){
     return 
     Container(
               padding: EdgeInsets.only(top: 20),
-               child: isLoading
-            ? Center(
-                child: CircularProgressIndicator(
-                  backgroundColor: Colors.green,
-                ),
-              )
-            :
+               child:
        Column(
                 children: <Widget>[
                    Padding(
@@ -462,7 +462,24 @@ Widget myCard (BuildContext context, user, isLoading, list){
                   
           
                   SizedBox(height: 10.0,),
-                  ListView.builder(
+
+
+                 show ? Visibility(
+                     visible: isLoading,
+                     child:
+                     Padding(
+                       padding: EdgeInsets.only(top: 50),
+                       child: Center(
+                        child: CircularProgressIndicator(
+                                      strokeWidth: 2,
+                                      backgroundColor: Colors.green,
+                                    ),
+                      ),
+                     ),
+                      
+                      replacement:
+                 
+                 ListView.builder(
                     shrinkWrap: true,
                     itemCount: list.length,
                     itemBuilder: (context, index){
@@ -516,7 +533,12 @@ Widget myCard (BuildContext context, user, isLoading, list){
                     )
                       );
                     }
-                  )
+                  )):
+                  Image(
+                          height: MediaQuery.of(context).size.height/3,
+                         image: AssetImage('images/no_results_found.png'),
+                        
+                       )
 
                 ],
               )
@@ -527,7 +549,7 @@ Widget myCard (BuildContext context, user, isLoading, list){
 
 
 
-Widget account(BuildContext context, user, isLoading, list){
+Widget account(BuildContext context, user, isLoading, list, show){
   print(list);
   return Column(
                 children: <Widget>[

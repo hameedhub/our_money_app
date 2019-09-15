@@ -129,10 +129,12 @@ class _Welcome extends State<Welcome>{
                     padding: EdgeInsets.only(top: 500.0, left: 20.0, right: 20.0),
                     child: GestureDetector(
                      onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Login())
-                      );
+
+                      Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(
+                      builder: (context)=> Login(),
+                    ));
+
                       },
                      child: Container(
                     alignment: Alignment.center,

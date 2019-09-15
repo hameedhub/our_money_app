@@ -35,9 +35,9 @@ class _Request extends State<Request> {
  
   void total (value){
     setState(() {
-    request= 'N'+value.toStringAsFixed(2);
+    request= '₦'+value.toStringAsFixed(2);
     var cal = (value * 0.2)+value;
-    payback = 'N'+cal.toStringAsFixed(2);
+    payback = '₦'+cal.toStringAsFixed(2);
   });
   }
 
@@ -51,7 +51,7 @@ void successSnackBar(String value) {
     backgroundColor: Colors.green[400]
     ));
 }
-isLoading(){
+_isLoading(){
       setState((){
         _isWorking = true;
       });
@@ -62,7 +62,7 @@ isLoading(){
       });
     }
 requestLoan() async {
-  _isNotLoading();
+  _isLoading();
   var day;
   if(_selectedDuration == 'Monthly'){
      day = 30;
@@ -265,19 +265,50 @@ requestLoan() async {
                       )),
                      
                   SizedBox(
-                    height: 20,
+                    height: 30,
                   ),
-                  GestureDetector(
-                    onTap: (){
-                     requestLoan();
-                    },
-                    child: Padding(
-                      padding: EdgeInsets.only(left: 30, right: 30, bottom: 20),
-                      child: successButton('Request This Loan', Colors.white)),
-                  ),
-                  
+                  Container(
+                              child: Visibility(
+                                visible:_isWorking,
+                                child: Center(
+                                  child: CircularProgressIndicator(
+                                    strokeWidth: 2,
+                                    backgroundColor: Colors.green,
+                                  ),
+                                ),
+                                
+                                 
+                                
+          
+                                replacement:  Padding(
+                                  padding: EdgeInsets.only(
+                                      top: 20.0, left: 20, right: 20),
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      requestLoan();
+                                    },
+                                    child: Container(
+                                        alignment: Alignment.center,
+                                        height:50,
+                                        decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius: BorderRadius.circular(25.0)),
+                                        child: successButton('Request Loan', Colors.white),)
+                                  ),
+                                )
+                              ),
+                            ),
+                  // GestureDetector(
+                  //   onTap: (){
+                  //    requestLoan();
+                  //   },
+                  //   child: Padding(
+                  //     padding: EdgeInsets.only(left: 30, right: 30, bottom: 20),
+                  //     child: successButton('Request This Loan', Colors.white)),
+                  // ),
+                   SizedBox(height: 10,),
                   Padding(
-                      padding: EdgeInsets.only(left: 30, right: 30),
+                      padding: EdgeInsets.only(left: 20, right: 20),
                       child: defaultButton('Loan details ', Colors.black54))
                 ],
               )

@@ -16,7 +16,7 @@ Widget greenBackground(){
 Widget whiteBackground(){
   return Container(
       decoration: BoxDecoration(
-          color: Colors.grey[200]
+          color: Colors.white12
     //       gradient: LinearGradient(
     //           //colors: [Colors.lightGreen[100], Colors.white24, Colors.lightGreen[100]],
     //           begin: Alignment.centerRight,

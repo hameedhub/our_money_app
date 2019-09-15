@@ -22,6 +22,7 @@ dependencies:
   http: ^0.12.0+2
   rflutter_alert: ^1.0.3
   shared_preferences: ^0.5.3+4
+  fancy_bottom_navigation: ^0.3.2
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -47,12 +48,17 @@ flutter:
   assets:
     - images/logo.png
     - images/welcome.jpeg
-    - images/card.jpg
     - images/wallet.png
     - images/avatar.png
     - images/ads.jpeg
     - images/profile.jpg
     - images/bg.png
+    - images/loan.png
+    - images/background.png
+    - images/no_results_found.png
+    - images/profile1.jpeg
+    - images/rep.png
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

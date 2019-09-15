@@ -347,10 +347,15 @@ _isLoading(){
                   final user = User(token: token, id: id, phone: phone, firstName: firstName,
                   lastName: lastName, email: email, address: address);
 
-                   Navigator.push(context, MaterialPageRoute(
+                  Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(
                       builder: (context)=> Index(user),
                     ));
               });
+                  //  Navigator.push(context, MaterialPageRoute(
+                  //     builder: (context)=> Index(user),
+                  //   ));
+              // });
               
       
             });

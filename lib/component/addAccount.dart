@@ -145,7 +145,7 @@ validateInput() async {
                         height: 0.3,
                         fontFamily: "Poppins", color: Colors.green, fontSize: 15.0, fontWeight: FontWeight.bold
                       ),
-                      maxLength: 30,
+                      maxLength: 20,
                     ),
                  SizedBox(height: 20.0,),
                  TextFormField(
@@ -181,7 +181,7 @@ validateInput() async {
                     ),
                  SizedBox(height: 20.0,),
                  TextFormField(
-                      initialValue: ' ',
+                      initialValue: '',
                       cursorColor: Colors.green,
                       decoration: InputDecoration(
                         labelText: "Account Number",
@@ -203,7 +203,7 @@ validateInput() async {
                      validator: (value) => value.length < 2
                                           ? 'Account number can\'t be empty'
                                           : null,
-                                      onSaved: (value) => _num = value,
+                                      onSaved: (value) => _num = value.trim(),
                       keyboardType: TextInputType.number,
                       style: new TextStyle(
                         height: 0.3,
